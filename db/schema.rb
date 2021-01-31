@@ -19,22 +19,22 @@ ActiveRecord::Schema.define(version: 2021_01_31_121303) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
-    t.bigint "{:foreign_key=>true}_id"
-    t.index ["{:foreign_key=>true}_id"], name: "index_cocktails_on_{:foreign_key=>true}_id"
   end
 
   create_table "doses", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description", null: false
+    t.bigint "ingredient_id"
+    t.bigint "cocktail_id"
+    t.index ["cocktail_id"], name: "index_doses_on_cocktail_id"
+    t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
-    t.bigint "{:foreign_key=>true}_id"
-    t.index ["{:foreign_key=>true}_id"], name: "index_ingredients_on_{:foreign_key=>true}_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -42,4 +42,6 @@ ActiveRecord::Schema.define(version: 2021_01_31_121303) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "doses", "cocktails"
+  add_foreign_key "doses", "ingredients"
 end
