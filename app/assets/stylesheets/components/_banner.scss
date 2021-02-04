@@ -20,11 +20,11 @@
   
   /* unvisited link */
   a:link {
-    color: $slightred;
+    color: #d9dbd0;
   }
   /* visited link */
   a:visited {
-    color: #a38aff;
+    color: #d9dbd0;
   }
   /* mouse over link */
   a:hover {
@@ -32,6 +32,6 @@
   }
   /* selected link */
   a:active {
-    color: #ffffff;
+    color: #d9dbd0
   }
 }
