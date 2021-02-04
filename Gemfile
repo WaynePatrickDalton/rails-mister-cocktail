@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # A gemfile for env files:
 gem 'dotenv-rails', groups: [:development, :test]
 
+# gem for image hosting 
+gem 'cloudinary', '~> 1.16.0'
+
 # gem for seeding : 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
