@@ -1,6 +1,6 @@
 class DosesController < ApplicationController
   def new
-    @dose = Dose.new
+    @dose = Dose.new(:description, :ingredient_id)
   end
   
   def create
@@ -11,7 +11,7 @@ class DosesController < ApplicationController
       redirect_to cocktail_path(@cocktail)
     else
       @review = Review.new
-      render "cocktails/show"
+      render "cocktails/new"
     end
   end
   
