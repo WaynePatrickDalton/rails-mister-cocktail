@@ -14,7 +14,9 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%=yield %>
+    <div class="min-height">
+      <%=yield %>
+    </div>
     <%= render "layouts/footer" %>
     <%= javascript_pack_tag "application" %>
     <%= stylesheet_pack_tag "application" %>
